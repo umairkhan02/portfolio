@@ -915,27 +915,3 @@ header, .bars-box, section {
 .portfolio-carousel .img-slide {
     transition: transform 0.3s ease-in-out;
 }
-
-footer {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #000;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-.container {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-main {
-    min-height: calc(100vh - 100px); /* Adjust based on footer height */
-}
