@@ -7,7 +7,7 @@
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -50,6 +50,8 @@ header.active {
     100% { 
         visibility: visible;
         opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -277,6 +279,10 @@ section.active {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.img-item img.loaded {
+    opacity: 1;
 }
 
 .home-img .img-box .img-item {
@@ -806,6 +812,14 @@ section.active {
     }
 }
 
+nav a:focus,
+.btn:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+}
+
 @media screen and (max-width: 768px) {
     #menu-icon {
         display: block
@@ -822,10 +836,16 @@ section.active {
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         text-align: center;
         display: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-1rem);
+        transition: all 0.3s ease;
     }
 
     nav.active {
         display: block;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     nav a {
@@ -914,4 +934,8 @@ header, .bars-box, section {
 
 .portfolio-carousel .img-slide {
     transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-carousel {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
