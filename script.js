@@ -1,5 +1,6 @@
 const navLinks = document.querySelectorAll('header nav a');
 const logoLink = document.querySelector('.logo');
+const Submit = document.querySelector('.btn');
 const sections = document.querySelectorAll('section');
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('header nav');
@@ -51,6 +52,19 @@ navLinks.forEach((link, idx) => {
 });
 
 logoLink.addEventListener('click', () => {
+    if(!navLinks[0].classList.contains('active')) {
+        activePage();
+        
+        navLinks[0].classList.add('active');
+
+        setTimeout(() => {
+            sections[0].classList.add('active');
+        }, 1100);
+    }
+});
+
+
+Submit.addEventListener('click', () => {
     if(!navLinks[0].classList.contains('active')) {
         activePage();
         
@@ -122,4 +136,22 @@ arrowLeft.addEventListener('click', () => {
     }
 
     activePortfolio();
+});
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    let formData = new FormData(this);
+
+    fetch(this.action, {
+        method: this.method,
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = "index.html"; // Redirect instantly (Change to your homepage URL)
+        }
+    })
+    .catch(error => console.error("Error:", error));
 });
