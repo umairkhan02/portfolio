@@ -397,7 +397,7 @@ section.active {
 }
 
 .resume-box p {
-    font-size: 1.6rem;
+    font-size: 1.6rem;  
 }
 
 .resume-box .desc {
@@ -480,6 +480,10 @@ section.active {
     margin-bottom: 2rem;
 }
 
+.resume-item .contain {
+    font-size: 1.2rem;
+}
+
 .resume-item .company::before {
     content: '';
     position: absolute;
@@ -532,7 +536,33 @@ section.active {
     transform: scale(1);
 }
 
-.resume-detail.about .resume-list{
+/*Certificate*/
+.certificate-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-container:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+
+
+/*resume about*/
+.resume-detail.about .resume-list {
     height: auto;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 
@@ -889,11 +919,13 @@ section.active {
     .resume-box h2,
     .resume-box .heading,
     .resume-box .desc,
-    .resume-detail.about .resume-item {
+    .resume-detail.about .resume-item 
+    {
         text-align: center;
     }
 
-    .home-detail .btn-sci {
+    .home-detail .btn-sci 
+    {
         flex-direction: column-reverse;
     }
 
